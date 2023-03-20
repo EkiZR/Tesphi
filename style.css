@@ -1,0 +1,289 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* warna background di body menjadi efek */
+.body {
+  overflow-x: hidden;
+  background: linear-gradient(to right bottom, #03001e 65%, purple);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* Untuk browser yang mendukung scrollbar-width */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Untuk browser yang mendukung scrollbar-color */
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+/* Untuk browser Firefox */
+* {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+.bg-gif {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #03001e,rgba(0,0,0,0)), url("intro.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: fade-out 5s ease-in-out forwards;
+}
+
+
+/* Animasi memudar fake loading */
+@keyframes fade-out {
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+section:nth-child(1) {  
+   background: linear-gradient(to top, #03001e,rgba(0,0,0,0)), url("5.jpg");
+   background-repeat: no-repeat;
+   background-size: cover; 
+   background-position: center;
+   height: 100vh;
+   width: 100%; 
+  }
+
+.about {
+    position: absolute;
+    top: 190%;
+}
+
+.navbar {
+  transition: all 0.5s;
+}
+
+.nav-item {
+  padding-left: 1.5em;
+}
+
+.navbar-nav a{
+  color: rgba(31, 31, 31, 0.842);
+  font-weight: 500;
+}
+
+a.active{
+  color: beige;
+}
+
+#btn-spy.active{
+  color: rgb(96, 72, 252);
+}
+
+a {
+  position: relative;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+}
+
+.navbar-nav a:hover {
+  color: grey;
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  border-radius: 5pt;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+.navbar-scrolled {
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0, 0, 0,0.15);
+}
+
+.eskul {
+  margin-top: 8%;
+  color: rgb(108, 108, 108);
+text-align: center;
+}
+
+.judul_event {
+  text-align: center;
+  color: rgb(108, 108, 108);
+
+}
+
+#card {
+  color: white;
+  border-radius: 15pt;
+  padding: 0.3em;
+  box-shadow: whitesmoke 0px 1px 3px 0px, whitesmoke 0px 1px 2px 0px;
+}
+
+#img-border {
+  border-radius: 15pt;
+}
+
+.row {
+padding-left: 1.6em; 
+  width: 100%;
+}
+
+.logo-phi-nav {
+  position: relative;
+  left: 8%;
+  bottom: 0.15em;
+}
+
+.hidden {
+  display: none;
+}
+
+
+#card:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 3px solid transparent;
+  border-left: 3px solid transparent;
+  transition: all .8s ease;
+}
+
+#card:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 3px solid transparent;
+  border-right: 3px solid transparent;
+  transition: all .8s ease;
+}
+
+#card:hover:after,
+#card:hover:before {
+  border-bottom-color: blue;
+  border-left-color: blue;
+  border-top-color: red;
+  border-right-color: red;
+  width: 100%;
+  height: 100%;
+  border-radius: 15pt;
+}
+
+#arrow-down {
+  text-align: center;
+  font-size: 3em;
+  color: white;
+  width: 100%;
+  height: 10vh;
+  position: absolute;
+  top: 90%;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  opacity: 50%;
+}
+
+footer {
+  background-color: #f2f2f2;
+  margin-top: 10%;
+  padding: 20px;
+  padding-bottom: -10px;
+  text-align: center;
+  font-size: 14px;
+  color: #373636;
+}
+
+
+
+/* mobile */
+@media only screen and (max-width: 480px) {
+   .eskul {
+    margin-top: 20%;
+   }
+
+  .hidden {
+    display: block;
+   margin: 1.6em;
+  }
+
+  .eskul-mobile img{
+ 
+  }
+
+  .container {
+    display: block;
+  width: 350px;
+  height: 500px;
+  perspective: 800px;
+}
+
+.container:hover > .card {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+#card-eskul {
+  border: none;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  position: relative;
+
+}
+
+
+
+.back {
+  background-color: white;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+
+
+  .cont  {
+  display: none;
+ }
+}
